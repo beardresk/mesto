@@ -11,3 +11,13 @@
   background-repeat: no-repeat;
   cursor: pointer;
 }
+
+@media screen and (max-width:768px) {
+  .profile__edit {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    background-position: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,25 @@
+.elements__card {
+  max-width: 282px;
+  min-height: 361px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  list-style: none;
+}
+
+@media screen and (max-width:920px) {
+  .elements__item {
+    min-height: 0;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .elements__item {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .elements__item {
+    min-height: 361px;
+  }
+}
