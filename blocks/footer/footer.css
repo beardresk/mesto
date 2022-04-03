@@ -4,9 +4,20 @@
   height: 18px;
 }
 
+
+@media screen and (max-width: 935px) {
+  .footer {
+    max-width: 581px;
+  }
+}
+@media screen and (max-width: 636px) {
+  .footer {
+    max-width: 282px;
+  }
+}  
+
 @media screen and (max-width:320px) {
   .footer {
-    max-width: 280px;
     margin: 48px auto 36px;
   }
 }

@@ -1,5 +1,5 @@
 .profile__info {
-  max-width: 366px;
+  width: 366px;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -8,6 +8,7 @@
 
 @media screen and (max-width:768px) {
   .profile__info {
+    width: 320px;
     justify-content: center;
   }
 }

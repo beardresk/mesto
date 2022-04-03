@@ -3,7 +3,7 @@
   min-height: 120px;
   margin: 40px auto 0;
   display: flex;
-  padding: 0 20px;
+  padding: 0 19px;
 }
 
 @media screen and (max-width:768px) {

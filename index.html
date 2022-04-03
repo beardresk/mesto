@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Александр Шабашов">
+  <meta name="descrpition" content="Место - сайт где вы сможете хранить свои фото-карточки.">
   <link rel="stylesheet" href="./pages/styles.css">
   <title>Mesto</title>
 </head>
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="./images/header-logo.svg" alt="Логотип сайта - Mesto">
+    <div class="header__logo"></div>
   </header>
-
   <section class="profile">
     <img class="profile__avatar" src="./images/profile-avatar.png" alt="Ваша аватарка">
     <div class="profile__info">
       <h1 class="profile__name">Жак-Ив Кусто</h1>
-      <button type="button" class="profile__edit active active"></button>
+      <button type="button" class="profile__edit active"></button>
       <p class="profile__profession">Исследователь океана</p>
     </div>
-    <button type="button" class="profile__add active active"></button>
+    <button type="button" class="profile__add active"></button>
   </section>
   
   <section class="elements">
@@ -28,7 +28,7 @@
       <li class="elements__card">
         <img class="elements__image" src="./images/element-karachaevsk.png" alt="">
         <div class="elements__info">
-          <h3 class="elements__title">Карачаевск</h3>
+          <h2 class="elements__title">Карачаевск</h2>
           <button class="elements__like active"></button>
         </div>
       </li>
@@ -36,7 +36,7 @@
       <li class="elements__card">
         <img class="elements__image" src="./images/element-elbrus.png" alt="">
         <div class="elements__info">
-          <h3 class="elements__title">Гора Эльбрус</h3>
+          <h2 class="elements__title">Гора Эльбрус</h2>
           <button class="elements__like active"></button>
       </div>
         
@@ -45,7 +45,7 @@
       <li class="elements__card">
         <img class="elements__image" src="./images/element-dombai.png" alt="">
         <div class="elements__info">
-          <h3 class="elements__title">Домбай</h3>
+          <h2 class="elements__title">Домбай</h2>
           <button class="elements__like active"></button>
         </div>
         
@@ -54,7 +54,7 @@
       <li class="elements__card">
         <img class="elements__image" src="./images/element-elbrus.png" alt="">
         <div class="elements__info">
-          <h3 class="elements__title">Гора Эльбрус</h3>
+          <h2 class="elements__title">Гора Эльбрус</h2>
           <button class="elements__like active"></button>
         </div>
         
@@ -71,7 +71,7 @@
       <li class="elements__card">
         <img class="elements__image" src="./images/element-karachaevsk.png" alt="">
         <div class="elements__info">
-          <h3 class="elements__title">Карачаево-Черкесия</h3>
+          <h2 class="elements__title">Карачаево-Черкесия</h2>
           <button class="elements__like active"></button>
         </div> 
       </li>
@@ -81,5 +81,18 @@
   <footer class="footer">
     <p class="footer__copy">© 2020 Mesto Russia</p>
   </footer>
+  
+    <div class="popup">
+      <div class="popup__card">
+      <button class="popup__exit active"></button>
+      <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form">
+          <input class="popup__name" placeholder="Жак-Ив Кусто" type="text" name="name" value="">
+          <input class="popup__profession" placeholder="Исследователь океана" type="text" name="professions" value="">
+          <button class="popup__save" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  <script src="./scripts/scripts.js"></script>
 </body>
 </html>

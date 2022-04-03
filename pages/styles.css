@@ -26,3 +26,13 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copy/footer__copy.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__card/popup__card.css);
+@import url(../blocks/popup/__exit/popup__exit.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__name/popup__name.css);
+@import url(../blocks/popup/__open/popup__open.css);
+@import url(../blocks/popup/__profession/popup__profession.css);
+@import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__title/popup__title.css);
