@@ -1,4 +1,5 @@
 .popup__exit {
+  padding: 0;
   width: 32px;
   height: 32px;
   background-image: url(../../../images/popup-close.svg);

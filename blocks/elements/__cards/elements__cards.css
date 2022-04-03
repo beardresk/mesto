@@ -1,7 +1,7 @@
 .elements__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 ;
+  margin: 0;
   padding: 0;
   list-style: none;
   column-gap: 17px;
