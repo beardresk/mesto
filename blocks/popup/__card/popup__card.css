@@ -1,13 +1,11 @@
 .popup__card {
-  top: 196px;
   position: relative;
   width: 430px;
-  height: 330px;
+  min-height: 330px;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
 }
 
 @media screen and (max-width:616px) {
