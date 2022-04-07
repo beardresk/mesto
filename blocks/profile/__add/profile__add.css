@@ -9,6 +9,7 @@
   align-self: center;
   margin-left: auto;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 @media screen and (max-width:768px) {

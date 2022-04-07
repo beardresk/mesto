@@ -1,0 +1,8 @@
+.popup__input {
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.popup__input:nth-of-type(2n) {
+  margin-bottom: 48px;
+}

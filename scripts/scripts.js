@@ -6,16 +6,17 @@ let popupEdit = document.querySelector('.profile__edit');
 let popupExit = document.querySelector('.popup__exit');
 let popup = document.querySelector('.popup');
 let popupSave = document.querySelector('.popup__save');
+let popupForm = document.querySelector('.popup__form');
 
 
 function openPopup () { 
-  popup.classList.add('popup__open');
+  popup.classList.add('popup_opened');
   popupName.textContent = profilName.value;
   popupProfession.textContent = profilProfession.value;
 } 
 
 function closePopup () {
-  popup.classList.remove('popup__open');
+  popup.classList.remove('popup_opened');
 }
 
 function formSubmitHandler(evt) {
@@ -27,4 +28,4 @@ function formSubmitHandler(evt) {
 
 popupEdit.addEventListener('click', openPopup);
 popupExit.addEventListener('click', closePopup);
-popup.addEventListener('submit', formSubmitHandler);
+popupForm.addEventListener('submit', formSubmitHandler);

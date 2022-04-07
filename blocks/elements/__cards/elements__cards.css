@@ -17,7 +17,6 @@
 
 @media screen and (max-width:616px) {
   .elements__cards {
-    margin: 0 auto;
     grid-template-columns: 1fr;
   }
 }
