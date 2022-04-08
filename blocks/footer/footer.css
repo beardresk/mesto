@@ -10,6 +10,7 @@
     max-width: 581px;
   }
 }
+
 @media screen and (max-width: 636px) {
   .footer {
     max-width: 282px;
@@ -20,5 +21,6 @@
   .footer {
     margin-top: 48px;
     margin-bottom: 36px;
+    max-width: 282px;
   }
 }
