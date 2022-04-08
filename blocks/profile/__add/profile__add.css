@@ -10,6 +10,7 @@
   margin-left: auto;
   cursor: pointer;
   border-radius: 3px;
+  padding: 0;
 }
 
 @media screen and (max-width:768px) {
