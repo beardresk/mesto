@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
 </head>
+
 <body class="page">
   <header class="header">
     <div class="header__logo"></div>
@@ -22,77 +24,38 @@
     </div>
     <button type="button" class="profile__add active"></button>
   </section>
-  
+
   <section class="elements">
-    <ul class="elements__cards">
-      <li class="elements__card">
-        <img class="elements__image" src="./images/element-karachaevsk.png" alt="Карачаевск">
-        <div class="elements__info">
-          <h2 class="elements__title">Карачаевск</h2>
-          <button class="elements__like active" type="button"></button>
-        </div>
-      </li>
-
-      <li class="elements__card">
-        <img class="elements__image" src="./images/element-elbrus.png" alt="Гора Эльбрус">
-        <div class="elements__info">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like active" type="button"></button>
-      </div>
-        
-      </li>
-
-      <li class="elements__card">
-        <img class="elements__image" src="./images/element-dombai.png" alt="Домбай">
-        <div class="elements__info">
-          <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like active" type="button"></button>
-        </div>
-        
-      </li>
-
-      <li class="elements__card">
-        <img class="elements__image" src="./images/element-elbrus.png" alt="Гора Эльбрус">
-        <div class="elements__info">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like active" type="button"></button>
-        </div>
-        
-      </li>
-
-      <li class="elements__card">
-        <img class="elements__image" src="./images/element-dombai.png" alt="Домбай">
-        <div class="elements__info">
-          <h3 class="elements__title">Домбай</h3>
-          <button class="elements__like active" type="button"></button>
-        </div>
-      </li>
-
-      <li class="elements__card">
-        <img class="elements__image" src="./images/element-karachaevsk.png" alt="Карачаевск">
-        <div class="elements__info">
-          <h2 class="elements__title">Карачаево-Черкесия</h2>
-          <button class="elements__like active" type="button"></button>
-        </div> 
-      </li>
-    </ul>
+    <ul class="elements__cards"></ul>
   </section>
 
   <footer class="footer">
     <p class="footer__copy">© 2020 Mesto Russia</p>
   </footer>
-  
-    <div class="popup">
-      <div class="popup__card">
+
+  <div class="popup">
+    <div class="popup__card">
       <button class="popup__exit active" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form" name="popup">
-          <input class="popup__input_type_name popup__input" placeholder="Жак-Ив Кусто" type="text" name="name" value="">
-          <input class="popup__input_type_job popup__input" placeholder="Исследователь океана" type="text" name="professions" value="">
-          <button class="popup__save" type="submit">Сохранить</button>
-        </form>
-      </div>
+      <form class="popup__form" name="popup">
+        <input class="popup__input_type_name popup__input" placeholder="Жак-Ив Кусто" type="text" name="name" value="">
+        <input class="popup__input_type_job popup__input" placeholder="Исследователь океана" type="text"
+          name="professions" value="">
+        <button class="popup__save" type="submit">Сохранить</button>
+      </form>
     </div>
+  </div>
+
+  <template class="elements__template">
+    <li class="elements__card">
+      <img class="elements__image" src="/" alt="">
+      <div class="elements__info">
+        <h2 class="elements__title"></h2>
+        <button class="elements__like active" type="button"></button>
+      </div>
+  </template>
+
   <script src="./scripts/scripts.js"></script>
 </body>
+
 </html>
