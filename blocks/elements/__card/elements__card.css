@@ -3,6 +3,7 @@
   background-color: #ffffff;
   border-radius: 8px;
   list-style: none;
+  position: relative;
 }
 
 @media screen and (max-width:768px) {
