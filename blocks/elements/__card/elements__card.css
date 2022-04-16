@@ -1,5 +1,6 @@
 .elements__card {
-  max-width: 282px;
+  min-width: 282px;
+  width: 100%;
   background-color: #ffffff;
   border-radius: 8px;
   list-style: none;
