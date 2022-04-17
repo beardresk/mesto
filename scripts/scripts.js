@@ -25,7 +25,7 @@ const initialCards = [
   }
 ];
 
-let elementsCards = document.querySelector('.elements__cards'); 
+let elementCards = document.querySelector('.elements__cards'); 
 let elementsTemplate = document.querySelector('.elements__template'); 
 let popupPlaceImage = document.querySelector('.popup_image');
 let btnPopupEdit = document.querySelector('.profile__edit'); 
