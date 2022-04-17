@@ -25,10 +25,23 @@ const initialCards = [
   }
 ];
 
-let elementsCards = document.querySelector('.elements__cards'); // ul элемент секции
-let elementsTemplate = document.querySelector('.elements__template'); // обращаюсь к самому темплейт
-let elemen = document.querySelector('.elements');
+let elementsCards = document.querySelector('.elements__cards'); 
+let elementsTemplate = document.querySelector('.elements__template'); 
 let popupPlaceImage = document.querySelector('.popup__place_image');
+let btnPopupEdit = document.querySelector('.profile__edit'); 
+let profileEditWindow = document.querySelector('.popup_place_profile'); 
+let popupExit = document.querySelector('.popup__exit'); 
+let nameProfile = document.querySelector('.profile__name'); 
+let jobProfile = document.querySelector('.profile__profession'); 
+let namePopup = document.querySelector('.popup__input_type_name'); 
+let jobPopup = document.querySelector('.popup__input_type_job');
+let popupForm = document.querySelector('.popup__form');
+let btnPopupAdd = document.querySelector('.profile__add'); 
+let profileAddWindow = document.querySelector('.popup_place_card'); 
+let btnExit = profileAddWindow.querySelector('.popup__exit'); 
+let inputTitleAdd = document.querySelector('.popup__input_type_title'); 
+let inputLinkAdd = document.querySelector('.popup__input_type_link'); 
+let popupSave = profileAddWindow.querySelector('.popup__save');
 
 function render() {
   const cards = initialCards.map(getElement);
@@ -36,33 +49,29 @@ function render() {
 } 
 
 function getElement(item) {
-  let newCard = elementsTemplate.content.cloneNode(true); // клонируем содержимое темплейт
-  let elementsTitle = newCard.querySelector('.elements__title'); // находим в темплейт тайтл
-  let elementsImage = newCard.querySelector('.elements__image'); // находим в темплейт изображение
-  elementsTitle.textContent = item.name; // получаем  
+  let newCard = elementsTemplate.content.cloneNode(true); 
+  let elementsTitle = newCard.querySelector('.elements__title'); 
+  let elementsImage = newCard.querySelector('.elements__image'); 
+  elementsTitle.textContent = item.name; 
   elementsImage.src = item.link;
   elementsImage.alt = item.name;
 
-  let elementDelete = newCard.querySelector('.element__delete'); // находим кнопку удаления у темпл.
-  elementDelete.addEventListener('click', deleteElementCard); // навешиваем на нее слушитель 
+  let elementDelete = newCard.querySelector('.element__delete'); 
+  elementDelete.addEventListener('click', deleteElementCard); 
 
   function deleteElementCard(evt) {
-    let element = evt.target.closest('.elements__card'); // содержит элемент на котором произошло событие + возвращает ближайший элмент
-    element.remove(); // удаляет элемент
+    let element = evt.target.closest('.elements__card'); 
+    element.remove(); 
   }
 
-  let likeButton = newCard.querySelector('.elements__like'); // находим кнопку лайка в темплейт
-
+  let likeButton = newCard.querySelector('.elements__like'); 
   function handleLikeElements(evt) {
-    let element = evt.target.closest('.elements__card'); // содержит элемент на котором произошло событие + возвращает ближайший элмент
-    let likeButtonActive = element.querySelector('.elements__like'); // нашли в темплейт кнопку лайка
-    likeButtonActive.classList.toggle('elements__like_active'); // добавили активное состояние лайка
+    let element = evt.target.closest('.elements__card'); 
+    let likeButtonActive = element.querySelector('.elements__like'); 
+    likeButtonActive.classList.toggle('elements__like_active'); 
   }
 
-  likeButton.addEventListener('click', handleLikeElements); //нажали на кнопку лайка
-
-
-
+  likeButton.addEventListener('click', handleLikeElements); 
 
   function openPopupFullImage(evt) {
     openPopup(popupPlaceImage);
@@ -70,66 +79,57 @@ function getElement(item) {
     let elementsImage = element.querySelector('.elements__image');
     let popupImage = popupPlaceImage.querySelector('.popup__image');
     let elementsTitle = element.querySelector('.elements__title');
-    let popupHead = popupPlaceImage.querySelector('.popup__head'); // подпись к карточке
+    let popupHead = popupPlaceImage.querySelector('.popup__head');
   
-
     popupImage.src = elementsImage.src;
     popupImage.alt = elementsImage.alt;
     popupHead.textContent = elementsTitle.textContent;
   }
-  let btnExitAdd = popupPlaceImage.querySelector('.popup__exit');
+
+  let btnExit = popupPlaceImage.querySelector('.popup__exit');
   elementsImage.addEventListener('click', openPopupFullImage);
-  btnExitAdd.addEventListener('click', function() {
+  btnExit.addEventListener('click', function() {
   closePopup(popupPlaceImage);
-});
+  }); 
 
   return newCard;
 } 
 
-// let popupPlaceImage = document.querySelector('.popup__place_image'); //нашли див попапа с изображением на весь экран
-
-render();
+function addNewCard(evt) {
+  evt.preventDefault();
+  let inputTitle = document.querySelector('.popup__input_type_title').value;
+  let inputLink = document.querySelector('.popup__input_type_link').value;
+  let elementQ = getElement({name: inputTitle, link: inputLink});
+  elementsCards.prepend(elementQ);
+}
 
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
 
-function closePopup (popup) {
-  popup.classList.remove('popup_opened');
- }
-
-
-// НАЧАЛО попап редактирования профиля
-
-let btnPopupEdit = document.querySelector('.profile__edit'); // кнопка редактирования
-let profileEditWindow = document.querySelector('.popup_place_profile'); // окно попапа ред проф
-let popupExit = document.querySelector('.popup__exit'); // крестик - закрытия попапа
-let nameProfile = document.querySelector('.profile__name'); // берём имя профиля жак ив кусто
-let jobProfile = document.querySelector('.profile__profession'); // берём проффесию из профиля
-let namePopup = document.querySelector('.popup__input_type_name'); // инпут попапа имя профиля
-let jobPopup = document.querySelector('.popup__input_type_job'); // инпут попапа проффесия профиля
-let popupForm = document.querySelector('.popup__form'); // тег form из самого попап 
-
-
-
-btnPopupEdit.addEventListener('click', function() {  //открываем попап
-  openPopup(profileEditWindow);
-
-});
-
-popupExit.addEventListener('click', function() { //закрываем попап на крестик
-  closePopup(profileEditWindow);
-});
-
-function formSubmitHandleEdit(evt) { // получаем значения профиля в инпуты попап
+function formSubmitHandleEdit(evt) {
   evt.preventDefault();
   nameProfile.textContent = namePopup.value;
   jobProfile.textContent = jobPopup.value;
   closePopup(profileEditWindow);
 }
 
-btnPopupEdit.addEventListener('click', function() { // открываем попап редактирования профиля
+function closePopup (popup) {
+  popup.classList.remove('popup_opened');
+ }
+
+btnPopupEdit.addEventListener('click', function() {  
+  openPopup(profileEditWindow);
+
+});
+
+popupExit.addEventListener('click', function() { 
+  closePopup(profileEditWindow);
+});
+
+
+btnPopupEdit.addEventListener('click', function() { 
   openPopup(profileEditWindow);
   namePopup.value = nameProfile.textContent;
   jobPopup.value = jobProfile.textContent;
@@ -137,26 +137,14 @@ btnPopupEdit.addEventListener('click', function() { // открываем поп
 
 popupForm.addEventListener('submit', formSubmitHandleEdit); 
 
-// КОНЕЦ попап редактирования профиля
-
-//НИЖЕ ПЕРЕМЕННЫЕ ДОБАВЛЕНИЯ КАРТОЧКИ
-let btnPopupAdd = document.querySelector('.profile__add'); // кнопка + добавления фото-карточки
-let profileAddWindow = document.querySelector('.popup_place_card'); //окно попапа добавления карточки
-let btnExitAdd = profileAddWindow.querySelector('.popup__exit'); // кнопка выхода из добавлентя карточки
-let inputTitleAdd = document.querySelector('.popup__input_type_title'); // данные попапа название картинки
-let inputLinkAdd = document.querySelector('.popup__input_type_link'); // данные попапа ссылка на картинку
-let popupAddSave = profileAddWindow.querySelector('.popup__save');
-
-
 btnPopupAdd.addEventListener('click', function() {
   openPopup(profileAddWindow);
 });
 
-btnExitAdd.addEventListener('click', function() {
+btnExit.addEventListener('click', function() {
   closePopup(profileAddWindow);
 });
 
+popupSave.addEventListener('click', addNewCard);
 
-
-// LIKE
-
+render();
