@@ -1,0 +1,18 @@
+[33m422d256[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to 422d256de097da043972ef0c447533c11ffdfe65
+[33ma13a26e[m HEAD@{1}: commit: fix: поменял картинки | почистил код js
+[33m3ee1373[m HEAD@{2}: commit: feat: добавление карточки вручную
+[33m2ab10a2[m HEAD@{3}: commit: осталось сделать добавления карты вручную
+[33m7d14636[m HEAD@{4}: commit: feat: добавил кнопку like
+[33m3367018[m HEAD@{5}: commit: feat: добавил 6 карточек
+[33mc978c46[m HEAD@{6}: commit: Обнулил padding у profile__add и elements
+[33m095aaa7[m HEAD@{7}: commit: убрал горизонтальный скрос с 906 до 915
+[33m9ea7c55[m HEAD@{8}: commit: правки после второго ревью
+[33m57719c9[m HEAD@{9}: commit: правки после ревью
+[33ma2df64e[m HEAD@{10}: commit: no-repeat
+[33me0db098[m HEAD@{11}: commit: index/styles
+[33mae12d0b[m HEAD@{12}: pull: Merge made by the 'ort' strategy.
+[33m614e09a[m HEAD@{13}: commit: правки после автотеста
+[33mb7aa7bc[m HEAD@{14}: commit: готовая работа
+[33mba5c7c4[m HEAD@{15}: commit: feat: сделал адаптив
+[33m601eebb[m HEAD@{16}: commit: тестовый пуш
+[33m422d256[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{17}: clone: from github.com:beardresk/mesto.git
