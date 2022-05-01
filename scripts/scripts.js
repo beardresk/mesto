@@ -82,6 +82,7 @@ function addNewCard(evt) {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', ecsClosePopup);
 }
 
 function handleProfileFormSubmit(evt) {
@@ -97,8 +98,17 @@ function closePopup (popup) {
 
   btnPopupEdit.addEventListener('click', function() {  
   openPopup(profileEditWindow);
-
+  document.removeEventListener('keydown', ecsClosePopup);
 });
+
+function ecsClosePopup (evt) {
+ const openPopupWin = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape' && openPopupWin !== null) {
+    closePopup(openPopupWin);
+  }
+}
+
+
 
 popupExit.addEventListener('click', function() { 
   closePopup(profileEditWindow);
