@@ -40,7 +40,7 @@ function getElement(item) {
 
   likeButton.addEventListener('click', clickLikeElement); 
 
-  function openPopupFullImage(evt) { // не смог вынести из функции getElement, что-то видимо с областью видимости(
+  function openPopupFullImage(evt) {
     openPopup(popupPlaceImage);
     popupImage.src = evt.target.src;
     popupImage.alt = evt.target.alt;
@@ -78,13 +78,6 @@ function addNewCard(evt) {
   closePopup(profileAddWindow);
 }
 
-
-
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', ecsClosePopup);
-}
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   nameProfile.textContent = namePopup.value;
@@ -92,23 +85,35 @@ function handleProfileFormSubmit(evt) {
   closePopup(profileEditWindow);
 }
 
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', handleEcsClosePopup);
+  document.addEventListener('click', handleCloseOverlay);
+}
+
+
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.addEventListener('keydown', handleEcsClosePopup);
+  document.addEventListener('click', handleCloseOverlay);
  }
 
   btnPopupEdit.addEventListener('click', function() {  
   openPopup(profileEditWindow);
-  document.removeEventListener('keydown', ecsClosePopup);
 });
 
-function ecsClosePopup (evt) {
+function handleEcsClosePopup (evt) {
  const openPopupWin = document.querySelector('.popup_opened');
   if (evt.key === 'Escape' && openPopupWin !== null) {
     closePopup(openPopupWin);
   }
 }
 
-
+function handleCloseOverlay(evt) {
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
+  }
+}
 
 popupExit.addEventListener('click', function() { 
   closePopup(profileEditWindow);
@@ -120,6 +125,7 @@ btnPopupEdit.addEventListener('click', function() {
   namePopup.value = nameProfile.textContent;
   jobPopup.value = jobProfile.textContent;
 });
+
 
 profileEditForm.addEventListener('submit', handleProfileFormSubmit); 
 
