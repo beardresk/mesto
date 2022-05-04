@@ -37,7 +37,7 @@
     <div class="popup__card">
       <button class="popup__exit active" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" name="popup">
+      <form class="popup__form" name="popup" novalidate>
         <input 
         class="popup__input_type_name popup__input" 
         placeholder="Введите Ваше имя" 
@@ -45,17 +45,21 @@
         maxlength="40"
         type="text" 
         name="name" 
+        id="user-name"
         value=""
         required>
+        <span class="popup__error" id="user-name-error"></span>
         <input 
         class="popup__input_type_job popup__input" 
         minlength="2"
         maxlength="200"
         placeholder="Введите Вашу профессию" 
+        id="user-info"
         type="text" 
         name="professions" 
         value=""
         required>
+        <span class="popup__error" id="user-info-error"></span>
         <button class="popup__button" type="submit">Сохранить</button>
       </form>
     </div>
@@ -66,8 +70,20 @@
         <button class="popup__exit active" type="button"></button>
         <h3 class="popup__title">Новое место</h3>
         <form id="popupForm" class="popup__form popup__form_card" name="popupNewCard">
-          <input class="popup__input_type_title popup__input" placeholder="Название" type="text" name="title" value="">
-          <input type="url" class="popup__input_type_link popup__input" placeholder="Ссылка на картинку" name="link" value="">
+          <input 
+          class="popup__input_type_title popup__input" 
+          placeholder="Название" 
+          type="text" 
+          name="title" 
+          value="">
+          <input 
+          type="url" 
+          class="popup__input_type_link popup__input" 
+          placeholder="Ссылка на картинку" 
+          name="link" 
+          value="">
+          <span class="popup__error" id="user-name-error"></span>
+
           <button class="popup__button" type="submit">Сохранить</button>
         </form>
       </div>
@@ -92,6 +108,7 @@
     </li>
   </template>
 
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/cards.js"></script>
   <script src="./scripts/scripts.js"></script>
 </body>
